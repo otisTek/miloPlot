@@ -231,9 +231,8 @@ if len(sys.argv) > 1:
       sys.exit()   
   if file.lower()[0:2] == "-h": 
     helpFlag=True
-# set output file --  not sure how I want to let the user set this
+# set output file 
 outputFile='miloPlot.pdf'
-pdf = PdfPages(outputFile)
 # write header to the display 
 if kbInput:
   print("")
@@ -255,8 +254,6 @@ if kbInput:
 iFile=True
 legendFlag=False
 fileList=[]
-# set output file --  not sure how I want to let the user set this
-outputFile='miloPlot.pdf'
 while iFile:
   if kbInput:
     print("")
@@ -283,7 +280,7 @@ while iFile:
           del commands[0]
           file=""
     else: file=""
-  pdf = PdfPages(outputFile)
+  if kbInput==False:pdf = PdfPages(outputFile)
 # end of file input portion of the command input file    
   if(file==""):iFile=False
 # just in case a user takes the prompt literally  
