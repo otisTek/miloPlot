@@ -1,0 +1,35 @@
+test1.op1
+Mach=1.0
+test2.op1
+Mach=0.8
+test3.op1
+Mach=0.6
+
+TIME
+ALT
+add y
+Q
+add y
+VEL
+add y
+ALPHAD
+show
+new
+TIME
+ALT
+add y
+WEIGHT
+add y
+THRUST
+show
+new
+TIME
+WEIGHT
+add y
+THRUST
+show
+new
+TIME
+THRUST
+show
+quit

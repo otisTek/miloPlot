@@ -1,0 +1,7 @@
+Inputfile test1.op1 Mach=1.0
+Inputfile test2.op1 Mach=0.8
+inputfile test3.op1 Mach=0.6
+plot TIME ALT Q VEL ALPHAD
+plot TIME THRUST
+plot TIME ALT WEIGHT THRUST
+plot TIME WEIGHT THRUST

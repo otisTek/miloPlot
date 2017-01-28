@@ -1,0 +1,64 @@
+[greyGeek:~/parisAeroTek/tools/miloPlot] greyGeek% miloPlot.py
+
+*--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* * - * -*-
+                       miloPlot V0.9
+      Copyright (C) 2017  Paris Aerospace Technologies
+*--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* * - * -*-
+
+enter quit at any prompt to terminate
+
+
+Please enter a file name for the plot data
+        enter <CR> to move on to plotting:  test1.op1
+ Please enter a data legend for this file:  Mach=1.0
+
+Please enter a file name for the plot data
+        enter <CR> to move on to plotting:  test2.op1
+ Please enter a data legend for this file:  Mach=0.8
+
+Please enter a file name for the plot data
+        enter <CR> to move on to plotting:  test3.op1
+ Please enter a data legend for this file:  Mach=0.6
+
+Please enter a file name for the plot data
+        enter <CR> to move on to plotting:  
+
+
+ Variables available for plotting
+TIME                 ALT                  VEL                  MACH                 Q                    ALPHAD               GAMD                 THETRD               
+WEIGHT               WDOT                 GCR                  RECI(1)              RECI(2)              RECI(3)              LOND                 LATD                 
+LIFT                 DRAG                 THRUST               PCAL(1)              PCAL(2)              PCAL(3)              PCAL(4)              PCAL(5)              
+CDOT(1)              GDALT                
+
+
+ Enter the x variable TIME
+ Enter the y variable ALT
+(a)dd Y,(n)ew plot,(s)how,(quit) a
+ Enter the y variable Q
+(a)dd Y,(n)ew plot,(s)how,(quit) a
+ Enter the y variable VEL
+(a)dd Y,(n)ew plot,(s)how,(quit) a    
+ Enter the y variable ALPHAD
+(a)dd Y,(n)ew plot,(s)how,(quit) s
+(a)dd Y,(n)ew plot,(s)how,(quit) new
+
+ Enter the x variable TIME
+ Enter the y variable ALT
+(a)dd Y,(n)ew plot,(s)how,(quit) a
+ Enter the y variable WEIGHT
+(a)dd Y,(n)ew plot,(s)how,(quit) a
+ Enter the y variable THRUST
+(a)dd Y,(n)ew plot,(s)how,(quit) s
+(a)dd Y,(n)ew plot,(s)how,(quit) n
+
+ Enter the x variable TIME
+ Enter the y variable WEIGHT
+(a)dd Y,(n)ew plot,(s)how,(quit) a
+ Enter the y variable THRUST
+(a)dd Y,(n)ew plot,(s)how,(quit) s
+(a)dd Y,(n)ew plot,(s)how,(quit) n
+
+ Enter the x variable TIME
+ Enter the y variable THRUST
+(a)dd Y,(n)ew plot,(s)how,(quit) s
+(a)dd Y,(n)ew plot,(s)how,(quit) quit

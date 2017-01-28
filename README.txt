@@ -1,0 +1,89 @@
+miloPlot.py
+##########################################################################################
+Overview
+This program is intended to be used to generate plots from an OTIS4 plot file using 
+  matplotlib.pyplot and numpy
+I wrote this  code to facilitate getting trajectory results plotted and inserted in
+powerpoint and keynote. You might notice that the varible titles change based on the 
+number of subplots along with the number of y gridlines
+
+ written by S.W.Paris January 2017
+   Paris Aerospace Technologies
+
+This is version 0.9 
+   things that still need to be done
+     expand the titles to include more otis ABLOCK variables
+     add help function(s)
+     python 3 testing
+     other os testing -  so far only macOS
+     better documentation
+ 
+   Copyright (C) 2017  Paris Aerospace Technologies
+##########################################################################################
+Installation
+miloPlot.py need a functioning python installation that includes
+the libraries
+      sys
+      numpy
+      matplotlib.pyplot
+      matplotlib.backends.backend_pdf
+You might want to add location of miloPlot.py in your PATH 
+##########################################################################################Running
+miloPlot.py is just a python program. There are several ways to run it
+I always use the terminal (command_line).
+
+option 1 interactive (run from the "terminal")
+
+[yourComputersPrompt]python miloPlot.py
+
+This will launch an interactive session where you will be prompted for the files
+that contain the data to be plotted. You will also be prompted for the variables to be
+plotted. An example interactive session is shown in the file interactiveSession.txt
+
+option 2 uses a file of commands to drive the program.  This is launched from the 
+terminal as follows
+
+[yourComputersPrompt] python miloPlot.py -f commandsFile
+
+
+commandFile is just a text file with the following form
+
+inputFile nameOfYourFirstDataFile optionalDatalegend
+inputFile nameOfYourNextDataFile  optionalDatalegend
+                                    - you can repeat this as many times as you like
+                                      testing has been limited to 3 files or less
+outputFile  nameOfYourOutputPdfFile - this is optional, if you do not specify an 
+                                        outputfile is is set to miloPlot.pdf
+plot xVariableName yVariableName - there can be multiple y variable names
+                                       each y variable is plotted on a separate subplot
+                                       repeat plot lines for each new plot
+
+Examples of commandFiles are included as commands1.txt and commands2.txt. 
+If you request plots of variables in the commandFile that aren't in the data file,
+miloPlot just ignores those inputs.
+                                       
+option 3 you can always use a script that contains the interactive commands 
+This is launched from the terminal as follows
+
+[yourComputersPrompt]python miloPlot.py < script.txt
+
+An example script file is included as script.txt
+
+Also included in the repository are three example data files, which are variations on the
+Bryson minimum time for a supersonic interceptor trajectory
+   test1.op1
+   test2.op1
+   test3.op1                                                                                                                
+     
+########################################################################################## 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
