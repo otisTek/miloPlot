@@ -87,3 +87,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+Disclaimer
+My python skills are primitive at best, but this code does what I need it to do.  It you find it useful great. I'm open to suggestions to make it better. 
