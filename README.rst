@@ -19,7 +19,7 @@ This is version 0.9
      expand the titles to include more otis ABLOCK variables
      add help function(s)
      python 3 testing
-     other os testing -  so far only macOS
+     other os testing -  so far only macOS & Debian Linux
      better documentation
  
    Copyright (C) 2017  Paris Aerospace Technologies
