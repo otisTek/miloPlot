@@ -115,3 +115,9 @@ Disclaimer
 ##########
 
 My python skills are primitive at best, but this code does what I need it to do.  It you find it useful great. I'm open to suggestions to make it better. 
+
+My "go to" reference for this work was the book:
+A Student’s Guide to Python for Physical Modeling, by
+Jesse M. Kinder & Philip Nelson
+
+An awesome quick start for python. 
