@@ -400,7 +400,7 @@ while makePlot:
             xIndx=findIndex(xVar,allNames[j],fileList[j])
             yIndx=findIndex(yVar[k-1],allNames[j],fileList[j])
             data=np.array(allData[j])        
-            data=data.reshape((len(data)/len(allNames[j]),len(allNames[j])))    
+            data=data.reshape((len(data)//len(allNames[j]),len(allNames[j])))    
             if xIndx >= 0 and yIndx >=0: 
                ax.plot(data[:,xIndx],data[:,yIndx],label=dataLegends[j])
             if k==1 and legendFlag :plt.legend()
