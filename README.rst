@@ -9,7 +9,10 @@ This program is intended to be used to generate plots from an OTIS4 plot file us
 
 I wrote this  code to facilitate getting trajectory results plotted and inserted in
 powerpoint and keynote. You might notice that the varible titles change based on the 
-number of subplots along with the number of y gridlines
+number of subplots along with the number of y gridlines.
+
+miloPlot has successfully run using python 2.7x on macOS and debian linux.
+miloPlot has also successfully run using python 3.6x on win10.
 
  written by S.W.Paris January 2017
    Paris Aerospace Technologies
@@ -18,8 +21,6 @@ This is version 0.9
    things that still need to be done
      expand the titles to include more otis ABLOCK variables
      add help function(s)
-     python 3 testing
-     other os testing -  so far only macOS & Debian Linux
      better documentation
  
    Copyright (C) 2017  Paris Aerospace Technologies
@@ -114,7 +115,7 @@ limitations under the License.
 Disclaimer
 ##########
 
-My python skills are primitive at best, but this code does what I need it to do.  It you find it useful great. I'm open to suggestions to make it better. 
+My python skills are primitive at best, but this code does what I need it to do. It you find it useful great. If you see better ways to do things, let me know.
 
 My "go to" reference for this work was the book:
 A Student’s Guide to Python for Physical Modeling, by
