@@ -387,7 +387,7 @@ while makePlot:
           ax = fig.add_subplot(numPlots,1,k)
           if numPlots > 2: plt.locator_params(axis='y',nbins=nBinMax)
 #         if numPlots > 3:fontSize=10
-          ax.set_xlabel(setTitle(xVar,1),size=fontSize)
+          if k == numPlots: ax.set_xlabel(setTitle(xVar,1),size=fontSize)
           ax.set_ylabel(setTitle(yVar[k-1],numPlots),size=fontSize)
           ax.get_yaxis().set_label_coords(-0.09,0.5)          
 #         plt.tick_params(axis='x',labelbottom='off')
