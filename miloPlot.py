@@ -408,7 +408,7 @@ while makePlot:
          pdf.savefig(fig)     
          figureNum+=1
          makePlot2=False 
-         if len(commands)==0 :# all done - yay!
+         if len(commands)==0 or commands[0]=='':# all done - yay!
 #           plt.show()
            pdf.close()
            print(("  miloPlot successful exit, plots written to {}").format(outputFile))
