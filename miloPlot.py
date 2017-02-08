@@ -279,8 +279,18 @@ while iFile:
           outputFile=localCommands[1]
           del commands[0]
           file=""
-    else: file=""
-  if kbInput==False:pdf = PdfPages(outputFile)
+    elif localCommands[0].lower()[0:4]=="plot":
+        file=""
+    else: 
+        print("\n  miloPlot terminating")
+        print(("##### invalid key word "'"{}"'" in the command file").format(localCommands[0]))
+        print("##### error is in the following line from the command file:")
+        print(commands[0])
+        print("")
+        print("No plot files generated")
+        print("")
+        sys.exit()
+
 # end of file input portion of the command input file    
   if(file==""):iFile=False
 # just in case a user takes the prompt literally  
@@ -306,6 +316,7 @@ while iFile:
       print((" problems with file {}. Try again ").format(file))
 #
 # this is where things end up after reading the data files
+if kbInput==False:pdf = PdfPages(outputFile)
 if kbInput:
   print("") 
   print("") 
