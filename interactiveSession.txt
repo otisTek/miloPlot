@@ -1,7 +1,7 @@
 [greyGeek:~/parisAeroTek/tools/miloPlot] greyGeek% miloPlot.py
 
 *--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* * - * -*-
-                       miloPlot V0.9
+                       miloPlot V0.92
       Copyright (C) 2017  Paris Aerospace Technologies
 *--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* * - * -*-
 
@@ -36,8 +36,8 @@ CDOT(1)              GDALT
 (a)dd Y,(n)ew plot,(s)how,(quit) a
  Enter the y variable Q
 (a)dd Y,(n)ew plot,(s)how,(quit) a
- Enter the y variable VEL
-(a)dd Y,(n)ew plot,(s)how,(quit) a    
+ Enter the y variable VEL   
+(a)dd Y,(n)ew plot,(s)how,(quit) a
  Enter the y variable ALPHAD
 (a)dd Y,(n)ew plot,(s)how,(quit) s
 (a)dd Y,(n)ew plot,(s)how,(quit) new
@@ -62,3 +62,5 @@ CDOT(1)              GDALT
  Enter the y variable THRUST
 (a)dd Y,(n)ew plot,(s)how,(quit) s
 (a)dd Y,(n)ew plot,(s)how,(quit) quit
+
+[greyGeek:~/parisAeroTek/tools/miloPlot] greyGeek% 

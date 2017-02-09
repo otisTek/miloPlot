@@ -2,38 +2,43 @@
 ######################################################################################################
 #*--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* *     - * -*-* **** -* --- *-** --- --* ** * ***
 ######################################################################################################
-#    miloPlot.py
-#
-# This program is intended to be used to generate plots from an OTIS4 plot file using 
-#   matplotlib.pyplot and numpy
-#
-#  written by S.W.Paris January 2017
-#    Paris Aerospace Technologies
-#
-# This is version 0.9 
-#  things that still need to be done
-#    provide file based inputs
-#    expand the titles to include more otis ABLOCK variables
-#    add help function(s)
-#    python 3 testing
-#    other os testing -  so far only macOS
-#
-#  Copyright (C) 2017  Paris Aerospace Technologies
-#
-#
-#   Licensed under the Apache License, Version 2.0 (the "License");
-#   you may not use this file except in compliance with the License.
-#   You may obtain a copy of the License at
-#
-#       http://www.apache.org/licenses/LICENSE-2.0
-#
-#   Unless required by applicable law or agreed to in writing, software
-#   distributed under the License is distributed on an "AS IS" BASIS,
-#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#   See the License for the specific language governing permissions and
-#   limitations under the License.
-#
-#
+"""  
+  miloPlot.py Version 0.92
+
+  This program is intended to be used to generate plots from an OTIS4 plot file using 
+    matplotlib.pyplot and numpy. Should work with python 2.7x and python 3.x
+ 
+   written by S.W.Paris January 2017
+     Paris Aerospace Technologies
+   updated by S.W.Paris February 2017
+      
+    recent changes
+      - more input error checking 
+      - fixed an issue where miloPlot.pdf was getting corrupted
+      - using docstrings instead of comments to describe what each code module does
+        
+    things that still need to be done
+      expand the titles to include more otis ABLOCK variables, 
+          maybe allow for a file input of titles
+      add help function(s)
+      more os testing -  so far only macOS, debian Linux & win10
+      
+   Copyright (C) 2017  Paris Aerospace Technologies
+ 
+ 
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE-2.0
+ 
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ 
+"""
 ######################################################################################################
 #*--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* *     - * -*-* **** -* --- *-** --- --* ** * ***
 ######################################################################################################
@@ -49,15 +54,18 @@ except NameError:
     pass
 ######################################################################################################
 def done(trigger):
-# done checks for a trigger word (quit) to terminate the program
+     """
+     done checks for a trigger word (quit) to terminate the program
+     """
      if trigger.upper()[:4] == "QUIT" :print("");sys.exit()
      return 
 ######################################################################################################
 def readCommands(file):
-# readCommands reads the command file and extracts the commands
-#   and associated data  
-#   commands=[]
-# read first line to get parameter names
+   """
+   readCommands reads the command file and extracts the commands
+   and associated data  
+   """
+#  read first line to get parameter names
    with open(file, 'r')as fInput:
        line = fInput.read().splitlines()
 # done reading the file
@@ -65,8 +73,10 @@ def readCommands(file):
    return (line)
 ######################################################################################################
 def readPlotFile(file):
-# readPlotFile reads an OTIS plot file and extracts & stores the variable names
-#   and associated data  
+   """
+   readPlotFile reads an OTIS plot file and extracts & stores the variable names
+   and associated data
+   """  
    inputNames=[]
    rawData=[]
    inputValues=[]
@@ -92,8 +102,10 @@ def readPlotFile(file):
    return (inputNames,inputValues)
 ######################################################################################################
 def mash(file1Names,file2Names):
-# mash combines two lists adding non duplicates from the second list 
-#  to the end of the first list
+   """
+   mash combines two lists adding non duplicates from the second list 
+   to the end of the first list
+   """
    for var in file2Names:
       add=True
       for var2 in file1Names:
@@ -104,8 +116,10 @@ def mash(file1Names,file2Names):
    return (file1Names) 
 ######################################################################################################
 def writeNames(names):
-# writeNames writes a formated list of variables
-# I suspect there is a better way to do this -- show me
+  """
+  writeNames writes a formated list of variables
+  I suspect there is a better way to do this -- please share with me
+  """
   print(" Variables available for plotting")
   namesPerLine=8
   for i in range(len(names)):
@@ -116,7 +130,9 @@ def writeNames(names):
   return
 ######################################################################################################
 def verifyIndex(var,names):
-# verify that the selected variable is in the masterList
+   """
+   verify that the selected variable is in the masterList
+   """
    iVar=' Enter the '+var+' variable '
    iError=True
    while iError:
@@ -132,7 +148,9 @@ def verifyIndex(var,names):
    return (sVar)
 ######################################################################################################
 def findIndex(var,names,jFile):
-# find index find where var is located in the list names
+  """
+  find index find where var is located in the list names
+  """
   try:
     sIndex=names.index(var)
   except:
@@ -143,8 +161,10 @@ def findIndex(var,names,jFile):
 ######################################################################################################
 ######################################################################################################
 def setTitle(var,numPlots):
-# setTitles assigns the plot axis labels - long ones for 1-2 subplots(numPlots,level=1),
-#            short ones for 3-4 (level=0), variable names for 5 and above
+   """
+   setTitles assigns the plot axis labels - long ones for 1-2 subplots(numPlots,level=1),
+           short ones for 3-4 (level=0), variable names for 5 and above
+   """
    plotTitles={
      "ACCA":["Axial Accel, g's","Axial Acceleration, aA, g's"],
      "ACCN":["Norm Accel, g's","Normal Acceleration, aN, g's"],
@@ -237,7 +257,7 @@ outputFile='miloPlot.pdf'
 if kbInput:
   print("")
   print("*--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* * - * -*-")
-  print( "                       miloPlot V0.9")
+  print( "                       miloPlot V0.92")
   print( "      Copyright (C) 2017  Paris Aerospace Technologies")
   print("*--* *- *-* ** ***     *- * *-* --- *** *--* *- -*-* * - * -*-")
 # check if a help request was made  
